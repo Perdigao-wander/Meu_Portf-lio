@@ -96,10 +96,7 @@ const Hero = () => {
 
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
                     <Button className="bg-indigo-600 hover:bg-indigo-700 text-white rounded-full px-8 py-6 text-lg group">
-
-                        <a
-                            href="#projects"
-                        >
+                        <a href="#projects" className="flex items-center">
                             Ver Projetos
                             <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                         </a>
