@@ -228,18 +228,6 @@ const Contact = () => {
                                     </>
                                 )}
                             </Button>
-                            <span className="block text-2xl md:text-3xl font-semibold text-gray-700">
-                                    Onde a sua
-                                    <span className="relative inline-block">
-                                        <span className="relative z-10 bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent font-bold">
-                                             ideia
-                                        </span>
-                                        <span className="absolute bottom-1 left-0 w-full h-2 bg-indigo-200 -z-0"></span>
-                                    </span>
-                                    <br />
-                                    se transforma em
-                                    <span className="font-bold text-indigo-600"> realidade</span>
-                            </span>
                         </form>
                     </div>
                 </div>
