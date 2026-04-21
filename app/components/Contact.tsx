@@ -161,6 +161,12 @@ const Contact = () => {
                     {/* Coluna da direita - Formulário */}
                     <div className="bg-white p-8 rounded-md shadow-xl border border-gray-100">
                         <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
+                            <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-2">
+                                Envie sua mensagem
+                            </h1>
+                            <p className="text-gray-600 mb-6">
+                                Estou a apenas um e-mail de distância
+                            </p>
                             <div className="grid sm:grid-cols-2 gap-4">
                                 <div className="space-y-2">
                                     <label className="text-sm font-medium text-gray-700">Nome *</label>
