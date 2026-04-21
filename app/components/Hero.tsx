@@ -14,7 +14,6 @@ const Hero = () => {
     const fullText = "Desenvolvo soluções digitais que unem tecnologia, design e performance, transformando ideias em experiências modernas, rápidas e intuitivas.";
 
 
-    // CONFIGURAÇÕES DE VELOCIDADE
     const TYPING_SPEED = 55;      // ← Velocidade ao escrever (menor = mais rápido)
     const DELETING_SPEED = 30;     // ← Velocidade ao apagar (menor = mais rápido)
     const PAUSE_DURATION = 2000;    // ← Pausa antes de apagar (em ms)
