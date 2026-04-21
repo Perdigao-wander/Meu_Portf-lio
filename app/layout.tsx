@@ -54,7 +54,7 @@ export const metadata: Metadata = {
         siteName: "Meu Portfólio",
         images: [
             {
-                url: "/assets/Logo.png",
+                url: "/assets/fotoeu.png",
                 width: 1200,
                 height: 630,
                 alt: "Meu Portfólio - Wander Perdigão",
@@ -67,7 +67,7 @@ export const metadata: Metadata = {
         card: "summary_large_image",
         title: "Meu Portfólio | Wander Perdigão",
         description: "Desenvolvedor web especializado em Next.js e React. Veja meus projetos!",
-        images: ["/assets/Logo.png"],
+        images: ["/assets/fotoeu.png"],
     },
     icons: {
         icon: [

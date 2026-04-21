@@ -80,7 +80,7 @@ const Hero = () => {
                     Disponível para novos projetos
                 </div>
                 <h1 className="text-5xl md:text-7xl font-extrabold text-white mb-6 tracking-tight leading-tight">
-                    Olá, eu sou um{" "}
+                    Olá, eu sou Wanderley, um{" "}
                     <span className="bg-gradient-to-r from-indigo-400 to-purple-400 text-transparent bg-clip-text">
                         Desenvolvedor Full Stack
                     </span>
