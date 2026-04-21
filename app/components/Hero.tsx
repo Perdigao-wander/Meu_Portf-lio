@@ -96,8 +96,13 @@ const Hero = () => {
 
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
                     <Button className="bg-indigo-600 hover:bg-indigo-700 text-white rounded-full px-8 py-6 text-lg group">
-                        Ver Projetos
-                        <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+
+                        <a
+                            href="#projects"
+                        >
+                            Ver Projetos
+                            <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                        </a>
                     </Button>
 
                     <Button variant="outline" className="bg-white/10 backdrop-blur-sm border-white/20 text-white hover:bg-white/20 rounded-full px-8 py-6 text-lg gap-2" asChild>
