@@ -11,7 +11,7 @@ const Hero = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
     const [isDeleting, setIsDeleting] = useState(false);
 
-    const fullText = "Crio soluções digitais que unem tecnologia, design e performance, transformando ideias em experiências modernas, rápidas e intuitivas.";
+    const fullText = "Desenvolvo soluções digitais que unem tecnologia, design e performance, transformando ideias em experiências modernas, rápidas e intuitivas.";
 
 
     // CONFIGURAÇÕES DE VELOCIDADE
