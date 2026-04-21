@@ -10,11 +10,15 @@ const Skills = () => {
         },
         {
             name: "Backend",
-            skills: ["Node.js", "PostgreSQL", "MongoDB", "GraphQL", "Redis"]
+            skills: ["Node.js", "Java", "Spring Boot", "PostgreSQL", "MongoDB", "GraphQL", "Redis"]
         },
         {
-            name: "Ferramentas",
-            skills: ["Git", "Docker", "AWS", "Figma", "Vercel"]
+            name: "DevOps & Ferramentas",
+            skills: ["Git", "Docker", "AWS", "Figma", "Vercel", "Portainer", "Nginx"]
+        },
+        {
+            name: "Data Science",
+            skills: ["Talend Open Studio", "Python", "Pandas"]
         }
     ];
 

@@ -9,6 +9,8 @@ import Skills from "@/app/components/Skills";
 import Contact from "@/app/components/Contact";
 
 export default function Home() {
+
+
     return (
         <div className="min-h-screen bg-white selection:bg-indigo-100 selection:text-indigo-900">
             <Navbar />

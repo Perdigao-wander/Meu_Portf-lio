@@ -1,24 +1,47 @@
 "use client";
 
 import React from 'react';
-import { User, Code, Palette, Zap } from 'lucide-react';
-
+import {
+    Code,
+    Palette,
+    Zap,
+    Container, // Docker
+    Server,   // Nginx
+    Terminal, // Linux
+} from "lucide-react";
 const About = () => {
+
+
     const features = [
         {
             icon: <Code className="w-6 h-6 text-indigo-600" />,
-            title: "Desenvolvimento",
-            description: "Especialista em React, Node.js e arquiteturas modernas."
+            title: "Desenvolvimento Full Stack",
+            description: "Next.js, React, Node.js, TypeScript e bancos de dados SQL/NoSQL."
         },
         {
             icon: <Palette className="w-6 h-6 text-indigo-600" />,
             title: "Design UI/UX",
-            description: "Foco em interfaces intuitivas e experiências memoráveis."
+            description: "Interfaces intuitivas, responsivas e com foco em acessibilidade."
         },
         {
+            icon: <Container className="w-6 h-6 text-indigo-600" />,
+            title: "Docker & DevOps",
+            description: "Containerização de aplicações, Docker Compose e ambientes isolados."
+        },
+        {
+            icon: <Server className="w-6 h-6 text-indigo-600" />,
+            title: "Nginx & Proxy",
+            description: "Servidor web, proxy reverso, SSL/TLS e otimização de recursos estáticos."
+        },
+/*        {
+            icon: <Terminal className="w-6 h-6 text-indigo-600" />,
+            title: "Servidores Linux",
+            description: "Configuração de VPS, automação com scripts bash e monitoramento."
+        },*/
+        {
             icon: <Zap className="w-6 h-6 text-indigo-600" />,
-            title: "Performance",
-            description: "Otimização de sites para velocidade e SEO impecáveis."
+            title: "Performance & SEO",
+            description: "Otimização de velocidade, Core Web Vitals e boas práticas de SEO."
         }
     ];
 
@@ -29,7 +52,7 @@ const About = () => {
                     <div className="relative">
                         <div className="aspect-square rounded-3xl bg-indigo-100 overflow-hidden relative z-10">
                             <img
-                                src="/assets/IMG_20250124_175408.jpg"
+                                src="/assets/fotoeu.png"
                                 alt="Perfil"
                                 className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500"
                             />
@@ -42,7 +65,7 @@ const About = () => {
                             Apaixonado por criar soluções que <span className="text-indigo-600">fazem a diferença</span>.
                         </h2>
                         <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-                            Com mais de 5 anos de experiência, ajudo empresas a construir produtos digitais escaláveis. Meu foco é unir a estética visual com a funcionalidade técnica.
+                            Com mais de 5 anos de experiência, ajudo empresas a construir produtos digitais escaláveis. Meu foco é unir a estética visual com a funcionalidade técnica e segurança.
                         </p>
 
                         <div className="grid gap-6">

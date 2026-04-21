@@ -25,6 +25,18 @@ export const serverFile: string = process.env.NEXT_PUBLIC_SERVER_FILE_API_URL ??
     throw new Error("❌ NEXT_PUBLIC_SERVER_API_URL não definida no .env");
 })();
 
+export const email_service: string = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID ?? (() => {
+    throw new Error("❌ NEXT_PUBLIC_SERVER_API_URL não definida no .env");
+})();
+
+export const email_template: string = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID ?? (() => {
+    throw new Error("❌ NEXT_PUBLIC_SERVER_API_URL não definida no .env");
+})();
+
+export const email_publuc_key: string = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY ?? (() => {
+    throw new Error("❌ NEXT_PUBLIC_SERVER_API_URL não definida no .env");
+})();
+
 
 
 /**

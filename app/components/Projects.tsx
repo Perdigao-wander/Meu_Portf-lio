@@ -9,26 +9,26 @@ import { Badge } from "@/app/components/ui/badge";
 const Projects = () => {
     const projects = [
         {
-            title: "E-commerce Platform",
-            description: "Uma plataforma completa de vendas com pagamentos integrados e painel administrativo.",
-            image: "https://images.unsplash.com/photo-1557821552-17105176677c?auto=format&fit=crop&q=80&w=800",
-            tags: ["React", "Node.js", "Stripe"],
+            title: "Website da Inspeção Geral de Finanças de São Tomé e Príncipe",
+            description: "Site institucional moderna para gestão financeira pública, com painel administrativo seguro e integração de dados estratégicos.",
+            image: "/assets/igf_site.png",
+            tags: ["Next.js", "Node.js","Tailwind CSS", "TypeORM", "Docker", "PostgreSQL"],
             github: "#",
-            demo: "#"
+            demo: "https://igf.gov.st/"
         },
         {
-            title: "SaaS Dashboard",
-            description: "Dashboard analítico para monitoramento de métricas em tempo real com gráficos interativos.",
-            image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800",
-            tags: ["TypeScript", "Tailwind", "Recharts"],
+            title: "Encantos Kids",
+            description: "Site comercial para divulgação de serviços de beleza infantil, com design acolhedor e navegação intuitiva.",
+            image: "/assets/encantos_kid_site.png",
+            tags: ["Next.js", "TypeScript", "Tailwind CSS"],
             github: "#",
-            demo: "#"
+            demo: "https://encantos-kids-website.vercel.app/"
         },
         {
-            title: "Social App",
-            description: "Rede social focada em comunidades de desenvolvedores com chat em tempo real.",
-            image: "https://images.unsplash.com/photo-1522542550221-31fd19575a2d?auto=format&fit=crop&q=80&w=800",
-            tags: ["Next.js", "Supabase", "Socket.io"],
+            title: "Xina Zá App",
+            description: "Plataforma interativa para preservação digital e valorização dos dialetos crioulos de São Tomé e Príncipe, com recursos de áudio e colaboração comunitária.",
+            image: "/assets/Xina_za_header.png",
+            tags: ["Next.js", "Supabase", "Socket.IO", "TypeScript", "Tailwind CSS", "Real-time Audio"],
             github: "#",
             demo: "#"
         }
@@ -55,12 +55,17 @@ const Projects = () => {
                                 />
                             </div>
                             <CardHeader>
-                                <div className="flex gap-2 mb-3">
-                                    {project.tags.map(tag => (
-                                        <Badge key={tag} variant="secondary" className="bg-indigo-50 text-indigo-600 hover:bg-indigo-100 border-none">
+                                <div className="flex gap-2 mb-3 flex-wrap">
+                                    {project.tags.slice(0, 5).map(tag => (
+                                        <Badge key={tag} variant="secondary" className="bg-indigo-50 text-indigo-600 hover:bg-indigo-100 border-none text-xs px-2 py-0.5">
                                             {tag}
                                         </Badge>
                                     ))}
+                                    {project.tags.length > 5 && (
+                                        <Badge variant="secondary" className="bg-gray-50 text-gray-600 border-none text-xs">
+                                            +{project.tags.length - 5}
+                                        </Badge>
+                                    )}
                                 </div>
                                 <CardTitle className="text-xl font-bold">{project.title}</CardTitle>
                             </CardHeader>
@@ -70,13 +75,19 @@ const Projects = () => {
                                 </p>
                             </CardContent>
                             <CardFooter className="flex justify-between border-t border-gray-50 pt-4">
-                                <a href={project.github} className="flex items-center text-sm font-medium text-gray-600 hover:text-indigo-600 transition-colors">
-                                    <FaGithub className="w-4 h-4 mr-2" />
-                                    Código
+                                <a href={project.github}
+                                   target="_blank"
+                                   rel="noopener noreferrer"
+                                   className="flex items-center text-sm font-medium text-gray-600 hover:text-indigo-600 transition-colors">
+                                        <FaGithub className="w-4 h-4 mr-2" />
+                                        Código
                                 </a>
-                                <a href={project.demo} className="flex items-center text-sm font-medium text-indigo-600 hover:text-indigo-700 transition-colors">
+                                <a href={project.demo}
+                                   target="_blank"
+                                   rel="noopener noreferrer"
+                                   className="flex items-center text-sm font-medium text-indigo-600 hover:text-indigo-700 transition-colors">
                                     <ExternalLink className="w-4 h-4 mr-2" />
-                                    Demo Live
+                                    Live
                                 </a>
                             </CardFooter>
                         </Card>

@@ -140,3 +140,20 @@ html {
     @apply font-sans;
   }
 }
+
+/* No globals.css - para breakpoints personalizados */
+@layer utilities {
+  /* Para telas muito pequenas (menos de 480px) */
+  @media (max-width: 480px) {
+    .xs\:inline-block {
+      display: inline-block;
+    }
+  }
+
+  /* Para melhorar a experiência mobile */
+  @media (max-width: 640px) {
+    .mobile-menu-open {
+      overflow: hidden;
+    }
+  }
+}
