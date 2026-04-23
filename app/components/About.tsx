@@ -4,10 +4,8 @@ import React from 'react';
 import {
     Code,
     Palette,
-    Zap,
-    Container, // Docker
-    Server,   // Nginx
-    Terminal, // Linux
+    Container,
+    Server,
 } from "lucide-react";
 const About = () => {
 
