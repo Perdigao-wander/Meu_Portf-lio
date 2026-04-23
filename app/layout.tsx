@@ -50,7 +50,7 @@ export const metadata: Metadata = {
     openGraph: {
         title: "Meu Portfólio | Wander Perdigão",
         description: "Conheça meu trabalho como desenvolvedor web. Projetos modernos, responsivos e com as melhores práticas do mercado.",
-        url: "https://meuportfolio.com",
+        url: "https://wanderley-perdigao-neto-protifolio.vercel.app",
         siteName: "Meu Portfólio",
         images: [
             {
@@ -91,10 +91,10 @@ export const metadata: Metadata = {
         google: "seu-google-verification-code",
     },
     alternates: {
-        canonical: "https://meuportfolio.com",
+        canonical: "https://wanderley-perdigao-neto-protifolio.vercel.app",
         languages: {
-            "pt-BR": "https://meuportfolio.com",
-            "en-US": "https://meuportfolio.com/en",
+            "pt-BR": "https://wanderley-perdigao-neto-protifolio.vercel.app",
+            "en-US": "https://wanderley-perdigao-neto-protifolio.vercel.app/en",
         },
     },
     category: "portfolio",
