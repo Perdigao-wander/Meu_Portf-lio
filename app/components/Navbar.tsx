@@ -107,7 +107,7 @@ const Navbar = () => {
                                 className="flex items-center gap-4 group cursor-pointer  p-2 rounded-xl transition-all duration-200"
                             >
                                 <Phone className="w-5 h-5" />
-                                <span className="text-base">Contrate-me</span>
+                                <span className="text-base">Contacte-me</span>
                             </a>
                         </Button>
                     </div>
@@ -181,7 +181,7 @@ const Navbar = () => {
                                 className="flex items-center gap-4 group cursor-pointer  p-2 rounded-xl transition-all duration-200"
                             >
                                 <Phone className="w-5 h-5" />
-                                <span className="text-base">Contrate-me</span>
+                                <span className="text-base">Contacte-me</span>
                             </a>
                         </Button>
                     </div>

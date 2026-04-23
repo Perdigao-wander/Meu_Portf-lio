@@ -42,6 +42,7 @@ const Projects = () => {
                     <p className="text-gray-600 max-w-2xl mx-auto">
                         Uma seleção dos meus trabalhos mais recentes e desafiadores.
                     </p>
+                    <div className="w-20 h-2 bg-indigo-500 mx-auto mt-4 rounded-full"></div>
                 </div>
 
                 <div className="grid md:grid-cols-3 gap-8">
