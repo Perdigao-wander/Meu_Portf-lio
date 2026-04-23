@@ -30,7 +30,7 @@ const Projects = () => {
             image: "/assets/Xina_za_header.png",
             tags: ["Next.js", "Supabase", "Socket.IO", "TypeScript", "Tailwind CSS", "Real-time Audio"],
             github: "#",
-            demo: "#"
+            demo: "https://xina-za-site-kt2d.vercel.app/"
         }
     ];
 
