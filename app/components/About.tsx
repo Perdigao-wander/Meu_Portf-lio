@@ -31,18 +31,18 @@ const About = () => {
         {
             icon: <Server className="w-6 h-6 text-indigo-600" />,
             title: "Nginx & Proxy",
-            description: "Servidor web, proxy reverso, SSL/TLS e otimização de recursos estáticos."
+            description: "Servidor web, proxy, SSL/TLS e otimização de recursos estáticos."
         },
 /*        {
             icon: <Terminal className="w-6 h-6 text-indigo-600" />,
             title: "Servidores Linux",
             description: "Configuração de VPS, automação com scripts bash e monitoramento."
-        },*/
+        },
         {
             icon: <Zap className="w-6 h-6 text-indigo-600" />,
             title: "Performance & SEO",
             description: "Otimização de velocidade, Core Web Vitals e boas práticas de SEO."
-        }
+        }*/
     ];
 
     return (
