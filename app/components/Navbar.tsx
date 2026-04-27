@@ -145,7 +145,7 @@ const Navbar = () => {
                     <div className="md:hidden">
                         <button
                             onClick={() => setIsOpen(!isOpen)}
-                            className={`p-2 rounded-lg transition-all duration-300 ${
+                            className={`p-2 rounded-lg transition-all duration-300 bg-indigo-600 text-white ${
                                 isOpen ? 'bg-indigo-50 text-indigo-600' : 'text-gray-600 hover:bg-gray-100'
                             }`}
                         >
