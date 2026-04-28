@@ -72,16 +72,16 @@ const Contact = () => {
                         {/* Frase de destaque */}
                         <div className="mb-10 p-6 bg-gradient-to-r from-indigo-50 to-purple-50 rounded-2xl">
                             <span className="block text-xl md:text-2xl font-semibold text-gray-700 text-center">
-                                Onde a sua
+                                        Transformando {" "}
                                 <span className="relative inline-block mx-1">
                                     <span className="relative z-10 bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent font-bold">
-                                        ideia
+                                        código
                                     </span>
                                     <span className="absolute bottom-1 left-0 w-full h-2 bg-indigo-200 -z-0"></span>
                                 </span>
                                 <br />
-                                se transforma em
-                                <span className="font-bold text-indigo-600"> realidade</span>
+                                em experiências
+                                <span className="font-bold text-indigo-600"> digitais incríveis</span>
                             </span>
                         </div>
 

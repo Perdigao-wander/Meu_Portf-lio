@@ -14,7 +14,7 @@ const Skills = () => {
         },
         {
             name:"DataBase",
-            skills: ["PostgreSQL", "MongoDB"]
+            skills: ["PostgreSQL", "MongoDB", "SQL Server", "MySQL"]
         },
         {
             name: "DevOps & Ferramentas",

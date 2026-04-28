@@ -63,7 +63,7 @@ const About = () => {
                             Apaixonado por criar soluções que <span className="text-indigo-600">fazem a diferença</span>.
                         </h2>
                         <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-                            Com mais de 5 anos de experiência, ajudo empresas a construir produtos digitais escaláveis. Meu foco é unir a estética visual com a funcionalidade técnica e segurança.
+                            Com mais de 4 anos de experiência, na área de Desenvolvimento Web e Software. Meu foco é unir a estética visual com a funcionalidade técnica e segurança.
                         </p>
 
                         <div className="grid gap-6">
