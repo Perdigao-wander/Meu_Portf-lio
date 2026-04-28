@@ -60,7 +60,7 @@ const About = () => {
 
                     <div>
                         <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-                            Apaixonado por criar soluções que <span className="text-indigo-600">fazem a diferença</span>.
+                            Apaixonado por criar Software que <span className="text-indigo-600">fazem a diferença e resolvam o problema</span>.
                         </h2>
                         <p className="text-lg text-gray-600 mb-8 leading-relaxed">
                             Com mais de 4 anos de experiência, na área de Desenvolvimento Web e Software. Meu foco é unir a estética visual com a funcionalidade técnica e segurança.
