@@ -52,7 +52,7 @@ const About = () => {
                             <img
                                 src="/assets/fotoeu.png"
                                 alt="Perfil"
-                                className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500"
+                                className="w-full h-full object-cover"
                             />
                         </div>
                         <div className="absolute -bottom-6 -right-6 w-48 h-48 bg-indigo-600 rounded-3xl -z-0 hidden md:block"></div>
