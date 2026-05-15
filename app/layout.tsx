@@ -1,15 +1,26 @@
+// app/layout.tsx
 import type { Metadata, Viewport } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Inter, Poppins, Roboto, Montserrat, Open_Sans } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-    variable: "--font-geist-sans",
+// Opções de fontes populares:
+const headingFont = Poppins({
     subsets: ["latin"],
+    variable: "--font-heading",
+    weight: ["400", "500", "600", "700"]
 });
 
-const geistMono = Geist_Mono({
-    variable: "--font-geist-mono",
+const bodyFont = Inter({
     subsets: ["latin"],
+    variable: "--font-body",
+});
+
+
+// Ou use uma única fonte para tudo:
+const mainFont = Montserrat({
+    subsets: ["latin"],
+    variable: "--font-main",
+    weight: ["300", "400", "500", "600", "700"]
 });
 
 // Metadata para SEO (sem themeColor, colorScheme e viewport)
@@ -127,11 +138,10 @@ export default function RootLayout({
     children: React.ReactNode;
 }>) {
     return (
-        <html
-            lang="pt-BR"
-            className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
-        >
-        <body className="min-h-full flex flex-col">{children}</body>
+        <html lang="pt-BR" className={`${bodyFont.variable} h-full antialiased scroll-smooth`}>
+            <body className="min-h-full flex flex-col font-sans">
+                {children}
+            </body>
         </html>
     );
 }

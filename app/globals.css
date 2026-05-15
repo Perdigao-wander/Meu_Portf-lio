@@ -49,14 +49,33 @@
 }
 
 /* Rolagem suave global */
-html {
-  scroll-behavior: smooth;
+/* app/globals.css */
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  html {
+    @apply font-sans;
+  }
+
+  /* ADICIONE AQUI - Dentro do @layer base */
+  html {
+    scroll-behavior: smooth !important;
+  }
+}
+
+/* OU como fallback, força diretamente */
+:root {
+  scroll-behavior: smooth !important;
 }
 
 /* Remove a rolagem para quem prefere reduzir movimento */
-@media (prefers-reduced-motion: reduce) {
+@media (prefers-reduced-motion: no-preference) {
   html {
-    scroll-behavior: auto;
+    scroll-behavior: smooth !important;
   }
 }
 
