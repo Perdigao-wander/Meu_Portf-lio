@@ -26,7 +26,7 @@ const mainFont = Montserrat({
 // Metadata para SEO (sem themeColor, colorScheme e viewport)
 export const metadata: Metadata = {
     title: {
-        default: "Meu Portfólio | Wander Perdigão",
+        default: "Wanderley Perdigão Neto | Portfólio",
         template: "%s | Meu Portfólio"
     },
     description: "Portfólio profissional de Wander Perdigão - Desenvolvedor web especializado em Next.js, React e criação de sites modernos e responsivos.",
@@ -59,7 +59,7 @@ export const metadata: Metadata = {
         },
     },
     openGraph: {
-        title: "Meu Portfólio | Wander Perdigão",
+        title: "Wanderley Perdigão Neto | Portfólio",
         description: "Conheça meu trabalho como desenvolvedor web. Projetos modernos, responsivos e com as melhores práticas do mercado.",
         url: "https://wanderley-perdigao-neto-protifolio.vercel.app",
         siteName: "Meu Portfólio",
@@ -76,7 +76,7 @@ export const metadata: Metadata = {
     },
     twitter: {
         card: "summary_large_image",
-        title: "Meu Portfólio | Wander Perdigão",
+        title: "Wanderley Perdigão Neto | Portfólio",
         description: "Desenvolvedor web especializado em Next.js e React. Veja meus projetos!",
         images: ["/assets/fotoeu.png"],
     },
