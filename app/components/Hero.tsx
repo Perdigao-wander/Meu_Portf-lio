@@ -1,21 +1,20 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { ArrowRight, Download, Terminal, ChevronRight } from "lucide-react";
+import { ArrowRight, Download } from "lucide-react";
 import { Button } from "@/app/components/ui/button";
-import { FaGithub, FaLinkedin, FaFacebookSquare } from "react-icons/fa";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 const Hero = () => {
+    // Texto dinamico a ser escrito
+    const fullText = "Transformo dados e código em soluções de alto impacto.";
     const [displayText, setDisplayText] = useState("");
     const [currentIndex, setCurrentIndex] = useState(0);
     const [isDeleting, setIsDeleting] = useState(false);
 
-    const fullText =
-        "Desenvolvo soluções digitais que unem tecnologia, design e performance, transformando ideias em experiências modernas, rápidas e intuitivas.";
-
-    const TYPING_SPEED = 55;
+    const TYPING_SPEED = 60;
     const DELETING_SPEED = 30;
-    const PAUSE_DURATION = 2000;
+    const PAUSE_DURATION = 2500; // Tempo de espera quando o texto termina de escrever
 
     useEffect(() => {
         const timeout = setTimeout(() => {
@@ -39,146 +38,108 @@ const Hero = () => {
         return () => clearTimeout(timeout);
     }, [currentIndex, isDeleting, fullText]);
 
-    const renderColoredText = () => {
-        const parts = displayText.split(/(tecnologia|design|performance)/g);
-        return parts.map((part, index) => {
-            if (part === "tecnologia" || part === "design" || part === "performance") {
-                return (
-                    <span key={index} className="text-cyan-400 font-bold">
-            {part}
-          </span>
-                );
-            }
-            return <span key={index}>{part}</span>;
-        });
-    };
-
     return (
         <section
             id="home"
-            className="relative min-h-screen mt-8 flex items-center pt-20 pb-16 px-4 overflow-hidden bg-[#0a0a0f]"
+            className="relative min-h-[85vh] flex items-center justify-center pt-28 pb-16 px-4 bg-[#080b14] text-white overflow-hidden"
         >
-            {/* Fundo com grid e "linhas de código" */}
-            <div className="absolute inset-0 z-0 opacity-20 pointer-events-none">
-                <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MCIgaGVpZ2h0PSI4MCIgdmlld0JveD0iMCAwIDQwIDQwIj48cmVjdCB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzJhMmEzYSIgc3Ryb2tlLXdpZHRoPSIwLjUiLz48L3N2Zz4=')] bg-[length:40px_40px]" />
-                {/* Simulação de código */}
-                <div className="absolute top-10 left-10 text-[10px] font-mono text-[#2a2a3a] space-y-1 select-none">
-                    <div>&lt;?php</div>
-                    <div>
-                        <span className="text-[#4a4a5a]">function</span>{" "}
-                        <span className="text-green-400">createSolution</span>(){" "}
-                    </div>
-                    <div className="ml-4">
-                        <span className="text-[#4a4a5a]">return</span>{" "}
-                        <span className="text-yellow-300">&#39;performance&#39;</span>;
-                    </div>
-                    <div className="ml-4">
-                        <span className="text-[#4a4a5a]">echo</span>{" "}
-                        <span className="text-yellow-300">&#39;Hello, World!&#39;</span>;
-                    </div>
-                </div>
-                <div className="absolute bottom-20 right-10 text-[10px] font-mono text-[#2a2a3a] space-y-1 select-none text-right">
-                    <div>
-                        <span className="text-[#4a4a5a]">const</span>{" "}
-                        <span className="text-green-400">dev</span> ={" "}
-                        <span className="text-yellow-300">&#39;Wanderley&#39;</span>;
-                    </div>
-                    <div>
-                        <span className="text-[#4a4a5a]">export</span>{" "}
-                        <span className="text-green-400">default</span>{" "}
-                        <span className="text-cyan-400">Hero</span>;
-                    </div>
-                </div>
+            {/* Fundo Tecnológico Otimizado */}
+            <div className="absolute inset-0 pointer-events-none z-0">
+                {/* Imagem de Fundo com ajuste de proporção */}
+                <img
+                    src="/assets/fundo.jpg"
+                    alt="Wanderley Perdigão Neto"
+                    className="w-full h-full object-cover object-center opacity-40 mix-blend-luminosity scale-105 transition-transform duration-1000"
+                />
+
+                {/* Overlay Gradiente para Contraste e Leitura Otimizada */}
+                <div className="absolute inset-0 bg-gradient-to-b from-[#080b14]/50 via-[#080b14]/10 to-[#080b14]" />
+
+                {/* Grid Digital Sutil */}
+                <div className="absolute inset-0 bg-[linear-gradient(to_right,#1e293b15_1px,transparent_1px),linear-gradient(to_bottom,#1e293b15_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)]" />
+
+                {/* Luzes de Néon de Fundo */}
+                <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[300px] bg-gradient-to-tr from-purple-600/20 via-indigo-500/20 to-cyan-400/20 rounded-full blur-[120px]" />
+                <div className="absolute bottom-10 left-1/4 w-72 h-72 bg-blue-600/15 rounded-full blur-[100px]" />
+                <div className="absolute top-10 right-1/4 w-72 h-72 bg-cyan-500/15 rounded-full blur-[100px]" />
             </div>
 
-            <div className="relative z-10 max-w-7xl mx-auto w-full">
-                <div className="max-w-3xl mx-auto">
-                    {/* Badge estilo terminal */}
-                    <div className="inline-flex items-center gap-2 px-4 py-1.5 mb-6 bg-[#1a1a2a] border border-green-500/30 rounded-full text-green-400 text-sm font-mono">
-                        <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
-                        <span>$_SESSION[&#39;status&#39;] = &#39;online&#39;</span>
-                        <span className="text-[#4a4a5a]">|</span>
-                        <span className="text-cyan-400">disponível</span>
-                    </div>
+            <div className="relative z-10 max-w-4xl mx-auto text-center space-y-8 mt-4">
 
-                    {/* Título com prompt */}
-                    <div className="flex items-start gap-2 mb-4">
-            <span className="text-green-400 text-4xl md:text-5xl font-bold font-mono mt-1">
-              $
-            </span>
-                        <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold font-mono leading-tight">
-                            <span className="text-white">Olá, sou </span>
-                            <span className="text-green-400">Wanderley</span>
-                            <span className="text-[#4a4a5a]">,</span>
-                            <br />
-                            <span className="text-white">um </span>
-                            <span className="text-cyan-400">Dev Full Stack</span>
-                        </h1>
-                    </div>
-
-                    {/* Texto digitado com cores */}
-                    <div className="mt-4 mb-8 text-lg md:text-xl text-[#b0b0c0] font-mono leading-relaxed min-h-[120px] border-l-2 border-green-500/30 pl-4">
-                        <span className="text-green-400">{"//"}</span> {renderColoredText()}
-                        <span className="inline-block w-0.5 h-5 bg-cyan-400 ml-0.5 animate-blink" />
-                    </div>
-
-                    {/* Botões no estilo ./comandos */}
-                    <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
-                        <Button className="bg-green-500 hover:bg-green-400 text-black font-bold rounded-full px-8 py-6 text-lg shadow-lg shadow-green-500/20 transition-all duration-300 group font-mono border border-green-300">
-                            <a href="#projects" className="flex items-center gap-2">
-                                <Terminal className="w-5 h-5" />
-                                <span>./ver-projetos</span>
-                                <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                            </a>
-                        </Button>
-
-                        <Button
-                            variant="outline"
-                            className="border-cyan-400/50 text-cyan-400 hover:bg-cyan-400/10 rounded-full px-8 py-6 text-lg gap-2 font-mono backdrop-blur-sm"
-                            asChild
-                        >
-                            <a
-                                href="https://drive.google.com/file/d/1s0Q2nOXBSELnFnNwti4PKx4h096Bmyiu/view?usp=sharing"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="flex items-center gap-2"
-                            >
-                                <Download className="w-5 h-5" />
-                                <span>cv.pdf</span>
-                            </a>
-                        </Button>
-                    </div>
-
-                    {/* Links sociais com marcadores de terminal */}
-                    <div className="flex items-center justify-center gap-6 font-mono">
-                        <span className="text-[#4a4a5a] text-sm">&lt;social&gt;</span>
-                        <a
-                            href="https://github.com/Perdigao-wander"
-                            className="text-[#b0b0c0] hover:text-green-400 transition-colors flex items-center gap-1 group"
-                        >
-                            <span className="text-[#4a4a5a] group-hover:text-green-400">❯</span>
-                            <FaGithub className="w-5 h-5" />
-                        </a>
-                        <a
-                            href="https://www.linkedin.com/in/wanderley-perdig%C3%A3o-neto-007263337/"
-                            className="text-[#b0b0c0] hover:text-cyan-400 transition-colors flex items-center gap-1 group"
-                        >
-                            <span className="text-[#4a4a5a] group-hover:text-cyan-400">❯</span>
-                            <FaLinkedin className="w-5 h-5" />
-                        </a>
-                        <a
-                            href="https://www.facebook.com/wanderley.perdigao.oliveira.neto/"
-                            className="text-[#b0b0c0] hover:text-blue-400 transition-colors flex items-center gap-1 group"
-                        >
-                            <span className="text-[#4a4a5a] group-hover:text-blue-400">❯</span>
-                            <FaFacebookSquare className="w-5 h-5" />
-                        </a>
-                        <span className="text-[#4a4a5a] text-sm">&lt;/social&gt;</span>
-                    </div>
+                {/* Badge com Margem Superior e Destaque no Topo */}
+                <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-slate-900/90 border border-slate-700/80 backdrop-blur-md text-cyan-400 text-sm font-medium shadow-xl shadow-cyan-950/30 transition-all hover:border-cyan-500/50">
+                    <span className="w-2.5 h-2.5 rounded-full bg-cyan-400 animate-pulse shadow-[0_0_10px_#22d3ee]" />
+                    <span>Engenheiro de Software & Analista de Dados</span>
                 </div>
+
+                {/* Título Principal com Efeito de Escrita (Typing) */}
+                <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white leading-[1.1]">
+                    Wanderley Perdigão Neto
+                    <span className="block mt-4 text-2xl sm:text-4xl font-semibold bg-gradient-to-r from-cyan-400 via-indigo-400 to-purple-400 bg-clip-text text-transparent min-h-[3rem] sm:min-h-[4rem]">
+                        {displayText}
+                        <span className="inline-block w-1 h-7 sm:h-9 bg-cyan-400 ml-1.5 animate-pulse rounded-full align-middle" />
+                    </span>
+                </h1>
+
+                {/* Subtítulo Tecnológico */}
+                <p className="text-base sm:text-lg text-slate-300 max-w-2xl mx-auto font-normal leading-relaxed pt-2">
+                    +4 anos de experiência na criação de APIs escaláveis, pipelines de dados e plataformas web eficientes.
+                </p>
+
+                {/* Botões de Ação */}
+                <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
+                    <Button
+                        asChild
+                        className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-slate-950 font-bold rounded-full px-8 py-6 text-base shadow-lg shadow-cyan-500/25 transition-all w-full sm:w-auto"
+                    >
+                        <a href="#projects" className="flex items-center justify-center gap-2">
+                            <span>Ver Projetos</span>
+                            <ArrowRight className="w-4 h-4" />
+                        </a>
+                    </Button>
+
+                    <Button
+                        variant="outline"
+                        className="bg-slate-900/60 border-slate-700 text-slate-200 hover:bg-slate-800/80 hover:text-white rounded-full px-8 py-6 text-base font-medium backdrop-blur-sm shadow-sm w-full sm:w-auto"
+                        asChild
+                    >
+                        <a
+                            href="https://drive.google.com/file/d/1s0Q2nOXBSELnFnNwti4PKx4h096Bmyiu/view?usp=sharing"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex items-center justify-center gap-2"
+                        >
+                            <Download className="w-4 h-4 text-cyan-400" />
+                            <span>Descarregar CV</span>
+                        </a>
+                    </Button>
+                </div>
+
+                {/* Links Sociais */}
+                <div className="pt-6 flex items-center justify-center gap-4 text-slate-400">
+                    <a
+                        href="https://github.com/Perdigao-wander"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="GitHub"
+                        className="p-3 rounded-full bg-slate-900/80 border border-slate-800 hover:text-cyan-400 hover:border-cyan-500/50 transition-all shadow-sm"
+                    >
+                        <FaGithub className="w-5 h-5" />
+                    </a>
+                    <a
+                        href="https://www.linkedin.com/in/wanderley-perdigao-neto/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="LinkedIn"
+                        className="p-3 rounded-full bg-slate-900/80 border border-slate-800 hover:text-cyan-400 hover:border-cyan-500/50 transition-all shadow-sm"
+                    >
+                        <FaLinkedin className="w-5 h-5" />
+                    </a>
+                </div>
+
             </div>
         </section>
     );
 };
 
-export default Hero; // ← sem nenhum caractere extra!
+export default Hero;

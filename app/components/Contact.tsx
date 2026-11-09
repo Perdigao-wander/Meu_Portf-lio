@@ -11,8 +11,9 @@ import {
     CheckCircle,
     XCircle,
     Loader2,
-    Terminal,
     ChevronRight,
+    MapPin,
+    Clock,
 } from "lucide-react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import emailjs from "@emailjs/browser";
@@ -42,7 +43,7 @@ const Contact = () => {
             if (result.status === 200) {
                 setStatus({
                     type: "success",
-                    message: "Mensagem enviada com sucesso! Entrarei em contato em breve.",
+                    message: "Mensagem enviada com sucesso! Entrarei em contacto em breve.",
                 });
                 formRef.current?.reset();
 
@@ -54,7 +55,7 @@ const Contact = () => {
             console.error("Erro ao enviar email:", error);
             setStatus({
                 type: "error",
-                message: "Erro ao enviar mensagem. Tente novamente ou entre em contato pelo WhatsApp.",
+                message: "Erro ao enviar mensagem. Tente novamente ou entre em contacto direto pelo WhatsApp.",
             });
         } finally {
             setIsLoading(false);
@@ -67,93 +68,87 @@ const Contact = () => {
             label: "E-mail",
             value: "oliveirawander1998@gmail.com",
             href: "mailto:oliveirawander1998@gmail.com",
-            color: "text-cyan-400",
-            bgColor: "bg-cyan-400/10",
-            hoverBg: "hover:bg-cyan-400/20",
-            borderColor: "border-cyan-400/20",
+            color: "text-indigo-600",
+            bgColor: "bg-indigo-50",
+            borderColor: "border-indigo-100",
         },
         {
             icon: <MessageSquare className="w-5 h-5" />,
-            label: "WhatsApp",
-            value: "+239 9097911",
-            href: "https://wa.me/2399097911",
-            color: "text-green-400",
-            bgColor: "bg-green-400/10",
-            hoverBg: "hover:bg-green-400/20",
-            borderColor: "border-green-400/20",
+            label: "WhatsApp / Telemóvel",
+            value: "(+239) 9990165",
+            href: "https://wa.me/2399990165",
+            color: "text-emerald-600",
+            bgColor: "bg-emerald-50",
+            borderColor: "border-emerald-100",
+        },
+        {
+            icon: <FaLinkedin className="w-5 h-5" />,
+            label: "LinkedIn",
+            value: "Wanderley Perdigão Neto",
+            href: "https://www.linkedin.com/in/wanderley-perdigao-neto/",
+            color: "text-purple-600",
+            bgColor: "bg-purple-50",
+            borderColor: "border-purple-100",
         },
         {
             icon: <FaGithub className="w-5 h-5" />,
             label: "GitHub",
             value: "@Perdigao-wander",
             href: "https://github.com/Perdigao-wander",
-            color: "text-[#b0b0c0]",
-            bgColor: "bg-[#2a2a3a]/50",
-            hoverBg: "hover:bg-[#2a2a3a]",
-            borderColor: "border-[#2a2a3a]",
-        },
-        {
-            icon: <FaLinkedin className="w-5 h-5" />,
-            label: "LinkedIn",
-            value: "Wanderley Perdigão Neto",
-            href: "https://www.linkedin.com/in/wanderley-perdig%C3%A3o-neto-007263337/",
-            color: "text-blue-400",
-            bgColor: "bg-blue-400/10",
-            hoverBg: "hover:bg-blue-400/20",
-            borderColor: "border-blue-400/20",
+            color: "text-slate-700",
+            bgColor: "bg-slate-100",
+            borderColor: "border-slate-200",
         },
     ];
 
     return (
-        <section id="contact" className="py-24 px-4 bg-[#0a0a0f] border-t border-[#1a1a2a]">
-            <div className="max-w-7xl mx-auto">
-                <div className="grid md:grid-cols-2 gap-16">
-                    {/* Coluna da esquerda - Informações de contato */}
-                    <div>
-                        <div className="flex items-center gap-2 mb-4">
-                            <span className="text-green-400 font-mono text-sm">$</span>
-                            <span className="text-[#4a4a5a] font-mono text-sm">cat contact.md</span>
+        <section
+            id="contact"
+            className="relative py-24 px-4 sm:px-6 lg:px-8 bg-slate-50 text-slate-900 overflow-hidden border-t border-slate-200/80"
+        >
+            {/* Luzes de Fundo Suaves */}
+            <div className="absolute inset-0 pointer-events-none z-0">
+                <div className="absolute top-1/3 left-10 w-96 h-96 bg-indigo-200/30 rounded-full blur-[140px]" />
+                <div className="absolute bottom-10 right-10 w-96 h-96 bg-purple-200/30 rounded-full blur-[140px]" />
+                <div className="absolute inset-0 bg-[radial-gradient(#e2e8f0_1px,transparent_1px)] [background-size:24px_24px] opacity-40" />
+            </div>
+
+            <div className="relative z-10 max-w-7xl mx-auto">
+                <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+
+                    {/* Coluna da Esquerda — Informações de Contacto */}
+                    <div className="lg:col-span-5 space-y-8">
+                        <div>
+                            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-slate-200 text-indigo-600 text-sm font-semibold shadow-sm mb-4">
+                                <span className="w-2 h-2 rounded-full bg-indigo-600 animate-pulse" />
+                                Contacto Directo
+                            </div>
+
+                            <h2 className="text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight">
+                                Vamos construir algo{" "}
+                                <span className="bg-gradient-to-r from-indigo-600 via-purple-600 to-blue-600 bg-clip-text text-transparent">
+                                    extraordinário?
+                                </span>
+                            </h2>
+
+                            <p className="text-slate-600 text-base sm:text-lg mt-4 font-normal leading-relaxed">
+                                Estou disponível para novos projetos, desenvolvimento de software por medida, automação de dados ou consultoria técnica.
+                            </p>
                         </div>
 
-                        <h2 className="text-3xl md:text-4xl font-bold font-mono text-white mb-4 leading-tight">
-                            <span className="text-green-400">//</span> Vamos{" "}
-                            <span className="text-cyan-400">conversar</span>?
-                        </h2>
-
-                        <p className="text-lg text-[#b0b0c0] font-mono mb-8 leading-relaxed border-l-2 border-green-500/30 pl-4">
-                            <span className="text-green-400">/*</span> Estou sempre aberto a novas
-                            <br />
-                            oportunidades e colaborações.
-                            <br />
-                            Sinta-se à vontade para entrar em contato! <span className="text-green-400">*/</span>
-                        </p>
-
-                        {/* Frase de destaque com estilo de código */}
-                        <div className="mb-10 p-6 bg-[#1a1a2a] rounded-2xl border border-[#2a2a3a] relative overflow-hidden">
-                            <div className="absolute top-2 right-2 text-[#4a4a5a] font-mono text-[10px]">
-                                <span className="text-green-400">●</span> running
+                        {/* Card de Localização / Status */}
+                        <div className="p-5 bg-white rounded-2xl border border-slate-200/80 shadow-sm space-y-3">
+                            <div className="flex items-center gap-3 text-slate-700 text-sm font-medium">
+                                <MapPin className="w-4 h-4 text-indigo-600 shrink-0" />
+                                <span>Água Grande, São Tomé, São Tomé e Príncipe</span>
                             </div>
-                            <div className="flex items-start gap-2">
-                                <span className="text-green-400 font-mono text-lg">$</span>
-                                <span className="text-[#b0b0c0] font-mono text-lg md:text-xl leading-relaxed">
-                  <span className="text-yellow-300">echo</span>{" "}
-                                    <span className="text-green-400">&quot;Transformando</span>
-                  <br />
-                  <span className="text-cyan-400">código</span>
-                  <span className="text-green-400"> em experiências</span>
-                  <br />
-                  <span className="text-yellow-300">digitais incríveis</span>
-                  <span className="text-green-400">&quot;</span>
-                  <span className="text-[#4a4a5a]">;</span>
-                </span>
-                            </div>
-                            <div className="mt-3 flex items-center gap-2 text-[10px] font-mono text-[#4a4a5a]">
-                                <span className="text-cyan-400">❯</span> output:{" "}
-                                <span className="text-green-400">✔</span> ready
+                            <div className="flex items-center gap-3 text-slate-700 text-sm font-medium">
+                                <Clock className="w-4 h-4 text-emerald-600 shrink-0" />
+                                <span>Disponibilidade: Imediata para projetos & consultorias</span>
                             </div>
                         </div>
 
-                        {/* Informações de contato */}
+                        {/* Lista de Canais de Contacto */}
                         <div className="space-y-3">
                             {contactInfo.map((item, index) => (
                                 <a
@@ -161,73 +156,58 @@ const Contact = () => {
                                     href={item.href}
                                     target={item.href.startsWith("http") ? "_blank" : undefined}
                                     rel={item.href.startsWith("http") ? "noopener noreferrer" : undefined}
-                                    className={`flex items-center gap-4 group p-3 rounded-xl border border-[#2a2a3a] ${item.bgColor} ${item.hoverBg} transition-all duration-300`}
+                                    className="flex items-center gap-4 p-4 rounded-2xl bg-white border border-slate-200/80 hover:border-indigo-300 hover:shadow-md transition-all duration-300 group"
                                 >
-                                    <div className={`p-2.5 rounded-xl ${item.bgColor} border ${item.borderColor} group-hover:scale-110 transition-transform duration-300`}>
+                                    <div className={`p-3 rounded-xl ${item.bgColor} border ${item.borderColor} group-hover:scale-105 transition-transform shrink-0`}>
                                         <span className={item.color}>{item.icon}</span>
                                     </div>
                                     <div className="flex-1 min-w-0">
-                                        <p className="text-xs font-mono text-[#4a4a5a]">{item.label}</p>
-                                        <p className={`font-mono text-sm truncate group-hover:${item.color} transition-colors ${item.color}`}>
+                                        <p className="text-xs text-slate-500 font-medium">{item.label}</p>
+                                        <p className="text-sm font-bold text-slate-900 truncate group-hover:text-indigo-600 transition-colors">
                                             {item.value}
                                         </p>
                                     </div>
-                                    <ChevronRight className={`w-4 h-4 ${item.color} opacity-0 group-hover:opacity-100 transition-all duration-300 group-hover:translate-x-1`} />
+                                    <ChevronRight className="w-4 h-4 text-slate-400 group-hover:text-indigo-600 group-hover:translate-x-1 transition-all" />
                                 </a>
                             ))}
                         </div>
                     </div>
 
-                    {/* Coluna da direita - Formulário */}
-                    <div className="bg-[#1a1a2a] p-8 rounded-2xl border border-[#2a2a3a] shadow-2xl shadow-cyan-400/5">
+                    {/* Coluna da Direita — Formulário em Card Branco */}
+                    <div className="lg:col-span-7 bg-white p-6 sm:p-8 rounded-3xl border border-slate-200/80 shadow-xl shadow-slate-200/50">
                         <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
-                            {/* Cabeçalho do formulário com estilo de terminal */}
-                            <div className="flex items-center gap-2 mb-4 pb-4 border-b border-[#2a2a3a]">
-                                <div className="flex items-center gap-1.5">
-                                    <span className="w-2.5 h-2.5 bg-red-500 rounded-full" />
-                                    <span className="w-2.5 h-2.5 bg-yellow-500 rounded-full" />
-                                    <span className="w-2.5 h-2.5 bg-green-500 rounded-full" />
-                                </div>
-                                <span className="text-xs text-[#4a4a5a] font-mono ml-2">~/contact/email.sh</span>
-                                <span className="ml-auto text-[10px] text-cyan-400 font-mono border border-cyan-400/20 px-2 py-0.5 rounded">
-                  POST
-                </span>
-                            </div>
 
-                            <div className="flex items-start gap-2">
-                                <span className="text-green-400 font-mono text-sm mt-1">$</span>
-                                <div>
-                                    <h3 className="text-xl font-bold font-mono text-white">
-                                        <span className="text-cyan-400">./</span>envie-sua-mensagem
-                                    </h3>
-                                    <p className="text-[#b0b0c0] font-mono text-sm">
-                                        <span className="text-[#4a4a5a]">//</span> Estou a apenas um e-mail de distância
-                                    </p>
-                                </div>
+                            <div>
+                                <h3 className="text-xl font-bold text-slate-900">
+                                    Enviar Mensagem
+                                </h3>
+                                <p className="text-slate-500 text-sm mt-1">
+                                    Preencha os dados abaixo e responderei o mais brevemente possível.
+                                </p>
                             </div>
 
                             <div className="grid sm:grid-cols-2 gap-4">
                                 <div className="space-y-2">
-                                    <label className="text-xs font-mono text-[#b0b0c0]">
-                                        <span className="text-green-400">❯</span> Nome <span className="text-red-400">*</span>
+                                    <label className="text-xs font-semibold text-slate-700">
+                                        Nome Completo <span className="text-indigo-600">*</span>
                                     </label>
                                     <Input
                                         name="user_name"
-                                        placeholder="Seu nome"
-                                        className="bg-[#0a0a0f] border-[#2a2a3a] text-white font-mono rounded-lg focus:border-cyan-400 focus:ring-cyan-400/20 placeholder:text-[#4a4a5a]"
+                                        placeholder="Ex: Maria Silva"
+                                        className="bg-slate-50 border-slate-200 text-slate-900 rounded-xl focus:border-indigo-600 focus:ring-indigo-600/20 placeholder:text-slate-400 h-12"
                                         required
                                         disabled={isLoading}
                                     />
                                 </div>
                                 <div className="space-y-2">
-                                    <label className="text-xs font-mono text-[#b0b0c0]">
-                                        <span className="text-green-400">❯</span> E-mail <span className="text-red-400">*</span>
+                                    <label className="text-xs font-semibold text-slate-700">
+                                        Endereço de E-mail <span className="text-indigo-600">*</span>
                                     </label>
                                     <Input
                                         name="user_email"
                                         type="email"
-                                        placeholder="seu@email.com"
-                                        className="bg-[#0a0a0f] border-[#2a2a3a] text-white font-mono rounded-lg focus:border-cyan-400 focus:ring-cyan-400/20 placeholder:text-[#4a4a5a]"
+                                        placeholder="seu.email@exemplo.com"
+                                        className="bg-slate-50 border-slate-200 text-slate-900 rounded-xl focus:border-indigo-600 focus:ring-indigo-600/20 placeholder:text-slate-400 h-12"
                                         required
                                         disabled={isLoading}
                                     />
@@ -235,53 +215,54 @@ const Contact = () => {
                             </div>
 
                             <div className="space-y-2">
-                                <label className="text-xs font-mono text-[#b0b0c0]">
-                                    <span className="text-green-400">❯</span> Mensagem <span className="text-red-400">*</span>
+                                <label className="text-xs font-semibold text-slate-700">
+                                    Mensagem <span className="text-indigo-600">*</span>
                                 </label>
                                 <Textarea
                                     name="message"
-                                    placeholder="Como posso ajudar? Conte-me sobre seu projeto..."
-                                    className="min-h-[150px] bg-[#0a0a0f] border-[#2a2a3a] text-white font-mono rounded-lg focus:border-cyan-400 focus:ring-cyan-400/20 placeholder:text-[#4a4a5a] resize-none"
+                                    placeholder="Descreva brevemente o seu projeto, ideia ou questão..."
+                                    className="min-h-[150px] bg-slate-50 border-slate-200 text-slate-900 rounded-xl focus:border-indigo-600 focus:ring-indigo-600/20 placeholder:text-slate-400 resize-none p-4"
                                     required
                                     disabled={isLoading}
                                 />
                             </div>
 
-                            {/* Status messages */}
+                            {/* Mensagens de Feedback */}
                             {status.type === "success" && (
-                                <div className="flex items-center gap-2 p-3 bg-green-500/10 border border-green-500/30 rounded-lg">
-                                    <CheckCircle className="w-5 h-5 text-green-400 flex-shrink-0" />
-                                    <span className="text-sm font-mono text-green-400">{status.message}</span>
+                                <div className="flex items-center gap-3 p-4 bg-emerald-50 border border-emerald-200 rounded-xl text-emerald-700 text-sm font-medium">
+                                    <CheckCircle className="w-5 h-5 shrink-0 text-emerald-600" />
+                                    <span>{status.message}</span>
                                 </div>
                             )}
 
                             {status.type === "error" && (
-                                <div className="flex items-center gap-2 p-3 bg-red-500/10 border border-red-500/30 rounded-lg">
-                                    <XCircle className="w-5 h-5 text-red-400 flex-shrink-0" />
-                                    <span className="text-sm font-mono text-red-400">{status.message}</span>
+                                <div className="flex items-center gap-3 p-4 bg-rose-50 border border-rose-200 rounded-xl text-rose-700 text-sm font-medium">
+                                    <XCircle className="w-5 h-5 shrink-0 text-rose-600" />
+                                    <span>{status.message}</span>
                                 </div>
                             )}
 
+                            {/* Botão de Envio */}
                             <Button
                                 type="submit"
-                                className="w-full bg-green-500 hover:bg-green-400 text-black font-bold font-mono rounded-lg py-6 text-lg shadow-lg shadow-green-500/20 transition-all duration-300 group disabled:opacity-50 disabled:cursor-not-allowed border border-green-300"
+                                className="w-full bg-slate-900 hover:bg-slate-800 text-white font-bold rounded-xl py-6 text-base shadow-md transition-all duration-300 group disabled:opacity-50 disabled:cursor-not-allowed border-0"
                                 disabled={isLoading}
                             >
                                 {isLoading ? (
-                                    <>
-                                        <Loader2 className="mr-2 w-5 h-5 animate-spin" />
-                                        <span>./enviando...</span>
-                                    </>
+                                    <div className="flex items-center gap-2">
+                                        <Loader2 className="w-5 h-5 animate-spin" />
+                                        <span>A Enviar Mensagem...</span>
+                                    </div>
                                 ) : (
-                                    <>
-                                        <Terminal className="w-5 h-5 mr-2" />
-                                        <span>./enviar-mensagem</span>
-                                        <Send className="ml-2 w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-                                    </>
+                                    <div className="flex items-center gap-2">
+                                        <span>Enviar Mensagem</span>
+                                        <Send className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-0.5 transition-transform" />
+                                    </div>
                                 )}
                             </Button>
                         </form>
                     </div>
+
                 </div>
             </div>
         </section>

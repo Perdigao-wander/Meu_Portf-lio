@@ -11,7 +11,6 @@ import {
     Brain,
     Mail,
     Phone,
-    Terminal,
 } from "lucide-react";
 import { Button } from "@/app/components/ui/button";
 
@@ -27,12 +26,12 @@ const Navbar = () => {
     const navLinks = [
         { name: "Início", href: "#home", icon: Home },
         { name: "Sobre Mim", href: "#about", icon: User },
-        { name: "Projetos", href: "#projects", icon: FolderGit2 },
         { name: "Habilidades", href: "#skills", icon: Brain },
+        { name: "Projetos", href: "#projects", icon: FolderGit2 },
         { name: "Contato", href: "#contact", icon: Mail },
     ];
 
-    // Efeito de digitação
+    // Efeito de digitação suave no nome
     useEffect(() => {
         let index = 0;
         typingRef.current = setInterval(() => {
@@ -43,16 +42,16 @@ const Navbar = () => {
                 clearInterval(typingRef.current!);
                 setTypingDone(true);
             }
-        }, 80);
+        }, 70);
         return () => clearInterval(typingRef.current!);
     }, []);
 
-    // Scroll detection + active section
+    // Scroll detection + ativação automática da secção
     useEffect(() => {
         const handleScroll = () => {
             setScrolled(window.scrollY > 20);
             const sections = navLinks.map((link) => link.href.substring(1));
-            const scrollPosition = window.scrollY + 100;
+            const scrollPosition = window.scrollY + 120;
             for (const section of sections) {
                 const element = document.getElementById(section);
                 if (element) {
@@ -79,38 +78,35 @@ const Navbar = () => {
 
     return (
         <nav
-            className={`fixed top-0 w-full z-50 transition-all duration-500 font-mono ${
+            className={`fixed top-0 w-full z-50 transition-all duration-300 ${
                 scrolled
-                    ? "bg-[#0a0a0f]/90 backdrop-blur-md border-b border-[#2a2a3a] shadow-2xl"
-                    : "bg-[#0a0a0f] border-b border-[#1a1a2a]"
+                    ? "bg-white border-b border-slate-200/90 shadow-md shadow-slate-200/60 py-2.5"
+                    : "bg-slate-50 py-4 border-b border-slate-200/80"
             }`}
         >
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="flex justify-between items-center h-16 md:h-20">
-                    {/* Logo / Nome com prompt e digitação */}
+                <div className="flex justify-between items-center h-14 md:h-16">
+
+                    {/* Logo / Brand Profissional */}
                     <a
                         href="#home"
                         onClick={(e) => handleClick(e, "#home")}
-                        className="flex items-center gap-3 group cursor-pointer flex-1 md:flex-none"
+                        className="flex items-center gap-3 group cursor-pointer"
                     >
-                        <div className="relative flex items-center gap-2">
-                            <span className="text-green-400 text-xl font-bold">$</span>
-                            <Terminal className="w-6 h-6 text-green-400 group-hover:text-cyan-400 transition-colors duration-300" />
-                            <span className="absolute -right-1 -top-1 w-2 h-2 bg-green-400 rounded-full animate-ping opacity-75" />
+                        <div className="relative flex items-center justify-center w-10 h-10 rounded-xl bg-white border border-slate-200 shadow-sm group-hover:border-indigo-300 transition-all">
+                            <Code2 className="w-5 h-5 text-indigo-600 group-hover:scale-110 transition-transform duration-300" />
+                            <span className="absolute top-1 right-1 w-2 h-2 bg-indigo-600 rounded-full animate-pulse" />
                         </div>
                         <div className="flex flex-col">
-              <span className="text-sm md:text-base lg:text-lg font-bold tracking-tight">
-                <span className="text-green-400">~/</span>
-                <span className="text-white">
-                  {displayName}
-                    {!typingDone && (
-                        <span className="inline-block w-[2px] h-4 bg-green-400 ml-0.5 animate-blink" />
-                    )}
-                </span>
-              </span>
-                            <span className="hidden xs:inline-block text-[10px] md:text-xs text-[#7a7a8a] leading-tight">
-                <span className="text-cyan-400">❯</span> Full Stack Developer
-              </span>
+                            <span className="text-sm md:text-base font-extrabold tracking-tight text-slate-900 flex items-center gap-1">
+                                <span>{displayName}</span>
+                                {!typingDone && (
+                                    <span className="inline-block w-[2px] h-4 bg-indigo-600 animate-pulse" />
+                                )}
+                            </span>
+                            <span className="text-[11px] text-slate-500 font-medium">
+                                Engenheiro de Software & Analista de Dados
+                            </span>
                         </div>
                     </a>
 
@@ -123,61 +119,58 @@ const Navbar = () => {
                                     key={link.name}
                                     href={link.href}
                                     onClick={(e) => handleClick(e, link.href)}
-                                    className={`relative px-3 xl:px-4 py-2 rounded-full transition-all duration-300 group whitespace-nowrap ${
+                                    className={`relative px-4 py-2 rounded-full text-sm font-semibold transition-all duration-200 group whitespace-nowrap flex items-center gap-2 ${
                                         isActive
-                                            ? "text-cyan-400 bg-[#1a1a2e]"
-                                            : "text-[#b0b0c0] hover:text-cyan-400 hover:bg-[#14141f]"
+                                            ? "text-indigo-600 bg-indigo-50 border border-indigo-100 shadow-sm"
+                                            : "text-slate-600 hover:text-indigo-600 hover:bg-slate-100/80"
                                     }`}
                                 >
-                  <span className="relative z-10 flex items-center gap-2">
-                    <link.icon className="w-4 h-4" />
-                    <span className="font-medium text-sm xl:text-base">{link.name}</span>
-                  </span>
-                                    {isActive && (
-                                        <span className="absolute inset-0 border border-cyan-400/30 rounded-full shadow-[0_0_12px_rgba(34,211,238,0.15)]" />
-                                    )}
+                                    <link.icon className={`w-4 h-4 ${isActive ? "text-indigo-600" : "text-slate-400 group-hover:text-indigo-600"}`} />
+                                    <span>{link.name}</span>
                                 </a>
                             );
                         })}
 
-                        <Button className="ml-4 bg-green-500 hover:bg-green-400 text-black font-bold rounded-full px-5 xl:px-6 gap-2 shadow-lg shadow-green-500/20 hover:shadow-green-400/40 transition-all duration-300 whitespace-nowrap border border-green-300">
+                        {/* Botão de WhatsApp */}
+                        <Button className="ml-4 bg-slate-900 hover:bg-slate-800 text-white font-bold rounded-full px-5 py-5 shadow-md transition-all duration-300 whitespace-nowrap border-0">
                             <a
-                                href="https://wa.me/2399097911"
+                                href="https://wa.me/2399990165"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="flex items-center gap-2"
                             >
-                                <Phone className="w-4 h-4" />
-                                <span className="text-base">Contacte-me</span>
+                                <Phone className="w-4 h-4 text-emerald-400" />
+                                <span className="text-sm">Contactar</span>
                             </a>
                         </Button>
                     </div>
 
-                    {/* Tablet (md a lg) - ícones sem texto */}
+                    {/* Tablet (md a lg) */}
                     <div className="hidden md:flex lg:hidden items-center gap-1">
                         {navLinks.map((link) => (
                             <a
                                 key={link.name}
                                 href={link.href}
                                 onClick={(e) => handleClick(e, link.href)}
-                                className={`p-2 rounded-lg transition-all duration-300 ${
+                                className={`p-2.5 rounded-xl transition-all duration-200 ${
                                     activeSection === link.href.substring(1)
-                                        ? "text-cyan-400 bg-[#1a1a2e]"
-                                        : "text-[#b0b0c0] hover:text-cyan-400 hover:bg-[#14141f]"
+                                        ? "text-indigo-600 bg-indigo-50 border border-indigo-100"
+                                        : "text-slate-600 hover:text-indigo-600 hover:bg-slate-100"
                                 }`}
                                 title={link.name}
                             >
                                 <link.icon className="w-5 h-5" />
                             </a>
                         ))}
-                        <Button className="ml-2 bg-green-500 hover:bg-green-400 text-black font-bold rounded-full p-2 shadow-lg shadow-green-500/20">
+                        <Button className="ml-2 bg-slate-900 hover:bg-slate-800 text-white font-bold rounded-full p-2.5 shadow-md">
                             <a
-                                href="https://wa.me/2399097911"
+                                href="https://wa.me/2399990165"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="flex items-center justify-center"
+                                aria-label="Contactar no WhatsApp"
                             >
-                                <Phone className="w-5 h-5" />
+                                <Phone className="w-5 h-5 text-emerald-400" />
                             </a>
                         </Button>
                     </div>
@@ -186,10 +179,11 @@ const Navbar = () => {
                     <div className="md:hidden">
                         <button
                             onClick={() => setIsOpen(!isOpen)}
-                            className={`p-2 rounded-lg transition-all duration-300 ${
+                            aria-label="Abrir menu"
+                            className={`p-2 rounded-xl border transition-all duration-200 ${
                                 isOpen
-                                    ? "bg-[#1a1a2e] text-cyan-400 border border-cyan-400/30"
-                                    : "text-[#b0b0c0] hover:text-cyan-400 hover:bg-[#14141f]"
+                                    ? "bg-indigo-50 text-indigo-600 border-indigo-200"
+                                    : "bg-white text-slate-700 border-slate-200 hover:text-indigo-600"
                             }`}
                         >
                             {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -198,46 +192,40 @@ const Navbar = () => {
                 </div>
             </div>
 
-            {/* Mobile Menu (até md) */}
+            {/* Mobile Dropdown Menu (Fundo Branco Sólido) */}
             <div
-                className={`md:hidden fixed inset-x-0 top-16 bg-[#0a0a0f]/95 backdrop-blur-md border-b border-[#1a1a2a] shadow-2xl transition-all duration-300 transform ${
+                className={`md:hidden fixed inset-x-0 top-[65px] bg-white border-b border-slate-200 shadow-xl transition-all duration-300 transform ${
                     isOpen
-                        ? "translate-y-0 opacity-100"
-                        : "-translate-y-full opacity-0 pointer-events-none"
+                        ? "translate-y-0 opacity-100 pointer-events-auto"
+                        : "-translate-y-4 opacity-0 pointer-events-none"
                 }`}
             >
-                <div className="px-4 py-4 space-y-2 max-h-[calc(100vh-4rem)] overflow-y-auto">
-                    {navLinks.map((link, index) => (
+                <div className="px-4 py-4 space-y-2 max-h-[calc(100vh-5rem)] overflow-y-auto">
+                    {navLinks.map((link) => (
                         <a
                             key={link.name}
                             href={link.href}
                             onClick={(e) => handleClick(e, link.href)}
-                            className="flex items-center gap-3 px-4 py-3 text-[#b0b0c0] hover:text-cyan-400 hover:bg-[#14141f] rounded-xl transition-all duration-200 border border-transparent hover:border-cyan-400/20"
-                            style={{ animationDelay: `${index * 50}ms` }}
+                            className="flex items-center gap-3 px-4 py-3 text-slate-700 hover:text-indigo-600 hover:bg-slate-50 rounded-xl transition-all duration-200 border border-transparent hover:border-slate-200"
                         >
-                            <link.icon className="w-5 h-5" />
-                            <span className="font-medium text-base">{link.name}</span>
+                            <link.icon className="w-5 h-5 text-indigo-600" />
+                            <span className="font-semibold text-base">{link.name}</span>
                         </a>
                     ))}
-                    <div className="pt-4 px-4">
-                        <Button className="w-full bg-green-500 hover:bg-green-400 text-black font-bold rounded-full gap-2 py-6 shadow-lg shadow-green-500/20">
+                    <div className="pt-3">
+                        <Button className="w-full bg-slate-900 hover:bg-slate-800 text-white font-bold rounded-xl gap-2 py-6 shadow-md">
                             <a
-                                href="https://wa.me/2399097911"
+                                href="https://wa.me/2399990165"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="flex items-center justify-center gap-2"
+                                className="flex items-center justify-center gap-2 w-full"
                             >
-                                <Phone className="w-5 h-5" />
-                                <span className="text-base">Contacte-me</span>
+                                <Phone className="w-5 h-5 text-emerald-400" />
+                                <span className="text-base">Contactar no WhatsApp</span>
                             </a>
                         </Button>
                     </div>
                 </div>
-            </div>
-
-            {/* (Opcional) Barra de status estilo terminal no canto inferior direito */}
-            <div className="hidden md:block fixed bottom-4 right-4 text-[10px] text-[#4a4a5a] font-mono select-none pointer-events-none z-50 bg-[#0a0a0f]/80 px-3 py-1 rounded-full border border-[#1a1a2a]">
-                <span className="text-green-400">●</span> ONLINE&nbsp;|&nbsp;v3.2.1
             </div>
         </nav>
     );

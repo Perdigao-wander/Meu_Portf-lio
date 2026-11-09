@@ -1,141 +1,209 @@
 "use client";
 
-import React from "react";
-import { ExternalLink, FolderGit2, Code2 } from "lucide-react";
+import React, { useState } from "react";
+import { ExternalLink, Code2, BarChart3, FolderGit2 } from "lucide-react";
 import { FaGithub } from "react-icons/fa";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/app/components/ui/card";
 import { Badge } from "@/app/components/ui/badge";
 
 const Projects = () => {
+    const [activeFilter, setActiveFilter] = useState<"all" | "web" | "data">("all");
+
     const projects = [
         {
-            title: "IGF São Tomé",
+            title: "IGF São Tomé — Repositório & Gestão",
+            category: "web",
             description:
-                "Site institucional para gestão financeira pública, com painel administrativo e integração de dados.",
+                "Plataforma para controlo da administração financeira do Estado e gestão documental institucional.",
             image: "/assets/igf_site.png",
-            tags: ["Next.js", "Node.js", "Tailwind", "TypeORM", "Docker", "PostgreSQL"],
-            github: "#",
+            tags: ["Next.js", "Node.js", "PostgreSQL", "TypeORM", "Docker", "Tailwind CSS"],
+            github: "https://github.com/Perdigao-wander",
             demo: "https://igf.gov.st/",
-        },
-        {
-            title: "Encantos Kids",
-            description:
-                "Site comercial para serviços de beleza infantil, com design acolhedor e navegação intuitiva.",
-            image: "/assets/encantos_kid_site.png",
-            tags: ["Next.js", "TypeScript", "Tailwind CSS"],
-            github: "#",
-            demo: "https://encantos-kids-website.vercel.app/",
+            featured: true,
         },
         {
             title: "Xina Zá App",
+            category: "web",
             description:
                 "Plataforma interativa para valorização de dialetos crioulos com áudio e colaboração comunitária.",
             image: "/assets/Xina_za_header.png",
             tags: ["Next.js", "Supabase", "Socket.IO", "TypeScript", "Tailwind CSS"],
-            github: "#",
+            github: "https://github.com/Perdigao-wander",
             demo: "https://xina-za-site.vercel.app/",
+            featured: false,
+        },
+        {
+            title: "Encantos Kids",
+            category: "web",
+            description:
+                "Site comercial para serviços de beleza infantil, com design acolhedor e navegação intuitiva.",
+            image: "/assets/encantos_kid_site.png",
+            tags: ["Next.js", "TypeScript", "Tailwind CSS"],
+            github: "https://github.com/Perdigao-wander",
+            demo: "https://encantos-kids-website.vercel.app/",
+            featured: false,
         },
     ];
+
+    const filteredProjects = activeFilter === "all"
+        ? projects
+        : projects.filter(p => p.category === activeFilter);
 
     return (
         <section
             id="projects"
-            className="py-24 px-4 bg-[#0a0a0f] border-t border-[#1a1a2a]"
+            className="relative py-24 px-4 sm:px-6 lg:px-8 bg-slate-50 text-slate-900 overflow-hidden border-t border-slate-200/80"
         >
-            <div className="max-w-7xl mx-auto">
-                {/* Cabeçalho com estilo de terminal */}
-                <div className="text-center mb-16">
-                    <div className="inline-flex items-center gap-2 px-3 py-1 mb-4 bg-[#1a1a2a] border border-yellow-500/30 rounded-full text-yellow-400 text-sm font-mono">
-                        <span className="w-1.5 h-1.5 bg-yellow-400 rounded-full animate-pulse" />
-                        <span>ls -la ~/projects</span>
+            {/* Luzes de Fundo em Tons Claros */}
+            <div className="absolute inset-0 pointer-events-none z-0">
+                <div className="absolute top-1/3 right-10 w-[450px] h-[450px] bg-indigo-200/30 rounded-full blur-[140px]" />
+                <div className="absolute bottom-10 left-10 w-[450px] h-[450px] bg-purple-200/30 rounded-full blur-[140px]" />
+                <div className="absolute inset-0 bg-[radial-gradient(#e2e8f0_1px,transparent_1px)] [background-size:24px_24px] opacity-40" />
+            </div>
+
+            <div className="relative z-10 max-w-7xl mx-auto space-y-12">
+
+                {/* Cabeçalho da Secção */}
+                <div className="text-center space-y-4 max-w-3xl mx-auto">
+                    <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-slate-200 text-indigo-600 text-sm font-semibold shadow-sm">
+                        <span className="w-2 h-2 rounded-full bg-indigo-600 animate-pulse" />
+                        <span>Portfólio em Destaque</span>
                     </div>
-                    <h2 className="text-3xl md:text-4xl font-bold font-mono text-white">
-                        <span className="text-[#4a4a5a]">$</span>{" "}
-                        <span className="text-green-400">cat</span>{" "}
-                        <span className="text-yellow-300">projetos.md</span>
+
+                    <h2 className="text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight">
+                        Soluções que unem{" "}
+                        <span className="bg-gradient-to-r from-indigo-600 via-purple-600 to-blue-600 bg-clip-text text-transparent">
+                            engenharia e dados.
+                        </span>
                     </h2>
-                    <p className="text-[#b0b0c0] font-mono mt-4 max-w-2xl mx-auto border-b border-[#1a1a2a] pb-4 inline-block">
-                        <span className="text-cyan-400">//</span> Seleção dos meus trabalhos mais recentes
+
+                    <p className="text-slate-600 text-base sm:text-lg max-w-2xl mx-auto font-normal">
+                        Uma seleção dos meus projetos mais relevantes desenvolvidos para o setor público, empresas e aplicações web modernas.
                     </p>
+
+                    {/* Filtros de Categoria */}
+                    <div className="pt-4 flex flex-wrap items-center justify-center gap-2">
+                        <button
+                            onClick={() => setActiveFilter("all")}
+                            className={`px-4 py-2 rounded-full text-xs sm:text-sm font-medium transition-all duration-200 ${
+                                activeFilter === "all"
+                                    ? "bg-slate-900 text-white font-bold shadow-md shadow-slate-900/10"
+                                    : "bg-white text-slate-600 hover:text-slate-900 border border-slate-200"
+                            }`}
+                        >
+                            Todos os Projetos
+                        </button>
+                        <button
+                            onClick={() => setActiveFilter("web")}
+                            className={`px-4 py-2 rounded-full text-xs sm:text-sm font-medium transition-all duration-200 flex items-center gap-1.5 ${
+                                activeFilter === "web"
+                                    ? "bg-indigo-600 text-white font-bold shadow-md shadow-indigo-600/20"
+                                    : "bg-white text-slate-600 hover:text-slate-900 border border-slate-200"
+                            }`}
+                        >
+                            <Code2 className="w-4 h-4" />
+                            Full Stack & Web
+                        </button>
+                        <button
+                            onClick={() => setActiveFilter("data")}
+                            className={`px-4 py-2 rounded-full text-xs sm:text-sm font-medium transition-all duration-200 flex items-center gap-1.5 ${
+                                activeFilter === "data"
+                                    ? "bg-purple-600 text-white font-bold shadow-md shadow-purple-600/20"
+                                    : "bg-white text-slate-600 hover:text-slate-900 border border-slate-200"
+                            }`}
+                        >
+                            <BarChart3 className="w-4 h-4" />
+                            Data & Analytics
+                        </button>
+                    </div>
                 </div>
 
-                {/* Grid de projetos */}
-                <div className="grid md:grid-cols-3 gap-8">
-                    {projects.map((project, index) => (
+                {/* Grid de Cards de Projetos */}
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    {filteredProjects.map((project, index) => (
                         <Card
                             key={index}
-                            className="overflow-hidden bg-[#14141f] border border-[#1a1a2a] hover:border-cyan-400/30 transition-all duration-300 shadow-2xl shadow-cyan-500/5 rounded-2xl group"
+                            className="flex flex-col justify-between overflow-hidden bg-white border border-slate-200/80 hover:border-indigo-300 hover:shadow-xl hover:shadow-slate-200/50 transition-all duration-300 rounded-2xl group"
                         >
-                            <div className="relative overflow-hidden aspect-video bg-[#0a0a0f]">
-                                <img
-                                    src={project.image}
-                                    alt={project.title}
-                                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                                />
-                                {/* Overlay com ícone de terminal */}
-                                <div className="absolute top-2 left-2 flex items-center gap-1 bg-black/60 px-2 py-1 rounded text-[10px] font-mono text-[#4a4a5a]">
-                                    <Code2 className="w-3 h-3 text-green-400" />
-                                    <span>~/</span>
+                            <div>
+                                {/* Capa / Imagem do Projeto */}
+                                <div className="relative overflow-hidden aspect-video bg-slate-100">
+                                    <img
+                                        src={project.image}
+                                        alt={project.title}
+                                        className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                                    />
+                                    {/* Badge da Categoria sobreposta */}
+                                    <div className="absolute top-3 right-3 bg-white/90 backdrop-blur-md px-3 py-1 rounded-full border border-slate-200 text-[11px] font-semibold text-slate-700 flex items-center gap-1 shadow-sm">
+                                        {project.category === "data" ? (
+                                            <>
+                                                <BarChart3 className="w-3.5 h-3.5 text-purple-600" />
+                                                <span>Data</span>
+                                            </>
+                                        ) : (
+                                            <>
+                                                <Code2 className="w-3.5 h-3.5 text-indigo-600" />
+                                                <span>Full Stack</span>
+                                            </>
+                                        )}
+                                    </div>
                                 </div>
+
+                                <CardHeader className="pt-6 pb-2">
+                                    <CardTitle className="text-lg font-bold text-slate-900 group-hover:text-indigo-600 transition-colors flex items-center gap-2">
+                                        <FolderGit2 className="w-5 h-5 text-indigo-600 shrink-0" />
+                                        <span>{project.title}</span>
+                                    </CardTitle>
+                                </CardHeader>
+
+                                <CardContent className="space-y-4">
+                                    <p className="text-slate-600 text-sm leading-relaxed font-normal">
+                                        {project.description}
+                                    </p>
+
+                                    {/* Badges de Tecnologias */}
+                                    <div className="flex flex-wrap gap-1.5 pt-2">
+                                        {project.tags.map((tag) => (
+                                            <Badge
+                                                key={tag}
+                                                variant="secondary"
+                                                className="bg-slate-100 text-slate-700 hover:bg-indigo-50 hover:text-indigo-700 border border-slate-200/60 text-[11px] font-medium px-2.5 py-0.5 rounded-md transition-colors"
+                                            >
+                                                {tag}
+                                            </Badge>
+                                        ))}
+                                    </div>
+                                </CardContent>
                             </div>
 
-                            <CardHeader className="pb-2">
-                                <div className="flex flex-wrap gap-1.5 mb-2">
-                                    {project.tags.slice(0, 4).map((tag) => (
-                                        <Badge
-                                            key={tag}
-                                            variant="secondary"
-                                            className="bg-[#1a1a2a] text-cyan-400 hover:bg-[#2a2a3a] border-none font-mono text-[10px]"
-                                        >
-                                            #{tag.toLowerCase()}
-                                        </Badge>
-                                    ))}
-                                    {project.tags.length > 4 && (
-                                        <Badge
-                                            variant="secondary"
-                                            className="bg-[#1a1a2a] text-[#4a4a5a] border-none font-mono text-[10px]"
-                                        >
-                                            +{project.tags.length - 4}
-                                        </Badge>
-                                    )}
-                                </div>
-                                <CardTitle className="font-mono text-lg text-white flex items-center gap-2">
-                                    <FolderGit2 className="w-4 h-4 text-yellow-400" />
-                                    {project.title}
-                                </CardTitle>
-                            </CardHeader>
-
-                            <CardContent>
-                                <p className="text-[#b0b0c0] text-sm font-mono leading-relaxed">
-                                    {project.description}
-                                </p>
-                            </CardContent>
-
-                            <CardFooter className="flex justify-between border-t border-[#1a1a2a] pt-4">
+                            {/* Footer do Card com Links de Ação */}
+                            <CardFooter className="flex items-center justify-between border-t border-slate-100 pt-4 pb-4 bg-slate-50/50">
                                 <a
                                     href={project.github}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="flex items-center gap-1.5 text-sm font-mono text-[#7a7a8a] hover:text-cyan-400 transition-colors"
+                                    className="flex items-center gap-2 text-xs font-semibold text-slate-600 hover:text-slate-900 transition-colors"
                                 >
                                     <FaGithub className="w-4 h-4" />
-                                    <span>repo</span>
-                                    <span className="text-[#4a4a5a]">$</span>
+                                    <span>Código</span>
                                 </a>
-                                <a
-                                    href={project.demo}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="flex items-center gap-1.5 text-sm font-mono text-cyan-400 hover:text-green-400 transition-colors"
-                                >
-                                    <ExternalLink className="w-4 h-4" />
-                                    <span>live</span>
-                                    <span className="text-[#4a4a5a]">→</span>
-                                </a>
+
+                                {project.demo && project.demo !== "#" && (
+                                    <a
+                                        href={project.demo}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="flex items-center gap-1.5 text-xs font-semibold text-indigo-600 hover:text-indigo-700 transition-colors bg-indigo-50 px-3 py-1.5 rounded-lg border border-indigo-100"
+                                    >
+                                        <span>Live</span>
+                                        <ExternalLink className="w-3.5 h-3.5" />
+                                    </a>
+                                )}
                             </CardFooter>
                         </Card>
                     ))}
                 </div>
+
             </div>
         </section>
     );
