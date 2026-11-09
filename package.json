@@ -1,10 +1,10 @@
 {
-  "name": "encantos_kids_website",
+  "name": "my_protfolio",
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
+    "dev": "next dev -p 3070 --webpack",
+    "build": "next build --webpack",
     "start": "next start",
     "lint": "eslint"
   },

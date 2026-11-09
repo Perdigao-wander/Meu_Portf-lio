@@ -1,9 +1,7 @@
-// app/layout.tsx
 import type { Metadata, Viewport } from "next";
 import { Inter, Poppins, Roboto, Montserrat, Open_Sans } from "next/font/google";
 import "./globals.css";
 
-// Opções de fontes populares:
 const headingFont = Poppins({
     subsets: ["latin"],
     variable: "--font-heading",
@@ -16,7 +14,6 @@ const bodyFont = Inter({
 });
 
 
-// Ou use uma única fonte para tudo:
 const mainFont = Montserrat({
     subsets: ["latin"],
     variable: "--font-main",

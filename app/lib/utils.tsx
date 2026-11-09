@@ -18,23 +18,23 @@ export const server: string = process.env.NEXT_PUBLIC_SERVER_API_URL ?? (() => {
 })();
 
 export const serverPhoto: string = process.env.NEXT_PUBLIC_SERVER_PHOTO_API_URL ?? (() => {
-    throw new Error("❌ NEXT_PUBLIC_SERVER_API_URL não definida no .env");
+    throw new Error("❌ NEXT_PUBLIC_SERVER_PHOTO_API_URL não definida no .env");
 })();
 
 export const serverFile: string = process.env.NEXT_PUBLIC_SERVER_FILE_API_URL ?? (() => {
-    throw new Error("❌ NEXT_PUBLIC_SERVER_API_URL não definida no .env");
+    throw new Error("❌ NEXT_PUBLIC_SERVER_FILE_API_URL não definida no .env");
 })();
 
 export const email_service: string = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID ?? (() => {
-    throw new Error("❌ NEXT_PUBLIC_SERVER_API_URL não definida no .env");
+    throw new Error("❌ NEXT_PUBLIC_EMAILJS_SERVICE_ID não definida no .env");
 })();
 
 export const email_template: string = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID ?? (() => {
-    throw new Error("❌ NEXT_PUBLIC_SERVER_API_URL não definida no .env");
+    throw new Error("❌ NEXT_PUBLIC_EMAILJS_TEMPLATE_ID não definida no .env");
 })();
 
 export const email_publuc_key: string = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY ?? (() => {
-    throw new Error("❌ NEXT_PUBLIC_SERVER_API_URL não definida no .env");
+    throw new Error("❌ NEXT_PUBLIC_EMAILJS_PUBLIC_KEY não definida no .env");
 })();
 
 
