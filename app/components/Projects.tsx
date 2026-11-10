@@ -39,7 +39,7 @@ const Projects = () => {
                 "Plataforma interativa para valorização de dialetos crioulos com áudio e colaboração comunitária.",
             image: "/assets/Xina_za_header.png",
             tags: ["Next.js", "Supabase", "Socket.IO", "TypeScript", "Tailwind CSS"],
-            github: "https://github.com/Perdigao-wander",
+          //  github: "https://github.com/Perdigao-wander",
             demo: "https://xina-za-site.vercel.app/",
             featured: false,
         },
@@ -189,7 +189,7 @@ const Projects = () => {
 
                             {/* Footer do Card com Links de Ação */}
                             <CardFooter className="flex items-center justify-between border-t border-slate-100 pt-4 pb-4 bg-slate-50/50">
-                                <a
+{/*                                <a
                                     href={project.github}
                                     target="_blank"
                                     rel="noopener noreferrer"
@@ -197,7 +197,7 @@ const Projects = () => {
                                 >
                                     <FaGithub className="w-4 h-4" />
                                     <span>Código</span>
-                                </a>
+                                </a>*/}
 
                                 {project.demo && project.demo !== "#" && (
                                     <a
