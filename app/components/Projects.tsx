@@ -14,11 +14,22 @@ const Projects = () => {
             title: "IGF São Tomé — Repositório & Gestão",
             category: "web",
             description:
-                "Plataforma para controlo da administração financeira do Estado e gestão documental institucional.",
+                "Website Oficial da Inspeção Geral de Finanças de São Tomé e Príncipe.",
             image: "/assets/igf_site.png",
-            tags: ["Next.js", "Node.js", "PostgreSQL", "TypeORM", "Docker", "Tailwind CSS"],
+            tags: ["Next.js", "Node.js", "API Rest", "PostgreSQL", "TypeORM", "Docker", "Tailwind CSS"],
             github: "https://github.com/Perdigao-wander",
             demo: "https://igf.gov.st/",
+            featured: true,
+        },
+        {
+            title: "IGF São Tomé — Repositório & Gestão",
+            category: "web",
+            description:
+                "Plataforma para gestão documental institucional.",
+            image: "/assets/igf.jpg",
+            tags: ["Next.js", "Node.js","API Rest", "PostgreSQL", "TypeORM", "Docker", "Tailwind CSS"],
+            github: "https://github.com/Perdigao-wander",
+            //demo: "https://igf.gov.st/",
             featured: true,
         },
         {
