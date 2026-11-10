@@ -11,7 +11,7 @@ const Projects = () => {
 
     const projects = [
         {
-            title: "IGF São Tomé — Repositório & Gestão",
+            title: "Website Oficial da IGF São Tomé",
             category: "web",
             description:
                 "Website Oficial da Inspeção Geral de Finanças de São Tomé e Príncipe.",
