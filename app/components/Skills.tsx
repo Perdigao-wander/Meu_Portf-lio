@@ -51,7 +51,7 @@ const Skills = () => {
     return (
         <section
             id="skills"
-            className="relative py-24 px-4 sm:px-6 lg:px-8 bg-[#080b14] text-white overflow-hidden border-t border-slate-800/60"
+            className="relative py-16 px-4 sm:px-6 lg:px-8 bg-[#080b14] text-white overflow-hidden border-t border-slate-800/60"
         >
             {/* Fundo Tecnológico DISCRETO */}
             <div className="absolute inset-0 pointer-events-none z-0">

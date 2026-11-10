@@ -104,7 +104,7 @@ const Contact = () => {
     return (
         <section
             id="contact"
-            className="relative py-24 px-4 sm:px-6 lg:px-8 bg-slate-50 text-slate-900 overflow-hidden border-t border-slate-200/80"
+            className="relative py-16 px-4 sm:px-6 lg:px-8 bg-slate-50 text-slate-900 overflow-hidden border-t border-slate-200/80"
         >
             {/* Luzes de Fundo Suaves */}
             <div className="absolute inset-0 pointer-events-none z-0">

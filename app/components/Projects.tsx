@@ -52,7 +52,7 @@ const Projects = () => {
     return (
         <section
             id="projects"
-            className="relative py-24 px-4 sm:px-6 lg:px-8 bg-slate-50 text-slate-900 overflow-hidden border-t border-slate-200/80"
+            className="relative py-16 px-4 sm:px-6 lg:px-8 bg-slate-50 text-slate-900 overflow-hidden border-t border-slate-200/80"
         >
             {/* Luzes de Fundo em Tons Claros */}
             <div className="absolute inset-0 pointer-events-none z-0">
@@ -67,7 +67,7 @@ const Projects = () => {
                 <div className="text-center space-y-4 max-w-3xl mx-auto">
                     <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-slate-200 text-indigo-600 text-sm font-semibold shadow-sm">
                         <span className="w-2 h-2 rounded-full bg-indigo-600 animate-pulse" />
-                        <span>Portfólio em Destaque</span>
+                        <span>Projetos em Destaque</span>
                     </div>
 
                     <h2 className="text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight">

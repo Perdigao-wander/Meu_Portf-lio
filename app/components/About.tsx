@@ -50,7 +50,7 @@ const About = () => {
     return (
         <section
             id="about"
-            className="relative py-24 px-4 sm:px-6 lg:px-8 bg-slate-50 text-slate-900 overflow-hidden border-t border-slate-200/80"
+            className="relative py-16 px-4 sm:px-6 lg:px-8 bg-slate-50 text-slate-900 overflow-hidden border-t border-slate-200/80"
         >
             {/* Luzes de fundo suaves em tons neutros e azuis */}
             <div className="absolute inset-0 pointer-events-none z-0">
@@ -65,14 +65,28 @@ const About = () => {
                     {/* Lado Esquerdo – Foto Profissional com Card Flutuante Clean */}
                     <div className="lg:col-span-5 relative">
                         <div className="relative mx-auto max-w-md lg:max-w-none">
+                            <div>
+                                {/* Badge da Secção */}
+                                <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-slate-200 text-indigo-600 text-sm font-semibold shadow-sm mb-4">
+                                    <span className="w-2 h-2 rounded-full bg-indigo-600 animate-pulse" />
+                                    Sobre Mim
+                                </div>
 
+                                {/* Título Principal */}
+                                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight">
+                                    Engenharia de Software aliada à{" "}
+                                    <span className="bg-gradient-to-r from-indigo-600 via-purple-600 to-blue-600 bg-clip-text text-transparent">
+                                    Inteligência de Dados.
+                                </span>
+                                </h2>
+                            </div>
                             {/* Moldura de Vidro Clara */}
                             <div className="relative rounded-3xl p-3 bg-white border border-slate-200/80 shadow-2xl shadow-slate-200/60 overflow-hidden group">
-                                <div className="aspect-[4/5] rounded-2xl overflow-hidden relative bg-slate-100">
+                                <div className="relative aspect-[1/1] rounded-2xl overflow-hidden bg-slate-100">
                                     <img
                                         src="/assets/fotoeu.png"
                                         alt="Wanderley Perdigão D'Oliveira Neto"
-                                        className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                                        className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
                                     />
                                     {/* Overlay gradiente suave na base da foto */}
                                     <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent opacity-70" />
@@ -94,7 +108,6 @@ const About = () => {
                                     </span>
                                 </div>
                             </div>
-
                             {/* Brilhos decorativos sutis */}
                             <div className="absolute -bottom-6 -right-6 w-56 h-56 bg-indigo-100 rounded-full blur-3xl -z-10" />
                             <div className="absolute -top-6 -left-6 w-56 h-56 bg-purple-100 rounded-full blur-3xl -z-10" />
@@ -103,22 +116,6 @@ const About = () => {
 
                     {/* Lado Direito – Conteúdo Estruturado */}
                     <div className="lg:col-span-7 space-y-8">
-                        <div>
-                            {/* Badge da Secção */}
-                            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-slate-200 text-indigo-600 text-sm font-semibold shadow-sm mb-4">
-                                <span className="w-2 h-2 rounded-full bg-indigo-600 animate-pulse" />
-                                Sobre Mim
-                            </div>
-
-                            {/* Título Principal */}
-                            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight">
-                                Engenharia de Software aliada à{" "}
-                                <span className="bg-gradient-to-r from-indigo-600 via-purple-600 to-blue-600 bg-clip-text text-transparent">
-                                    Inteligência de Dados.
-                                </span>
-                            </h2>
-                        </div>
-
                         {/* Texto de Apresentação extraído do CV */}
                         <div className="space-y-4 text-slate-600 text-base sm:text-lg leading-relaxed font-normal">
                             <p>

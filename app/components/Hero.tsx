@@ -104,7 +104,7 @@ const Hero = () => {
                         asChild
                     >
                         <a
-                            href="https://drive.google.com/file/d/1s0Q2nOXBSELnFnNwti4PKx4h096Bmyiu/view?usp=sharing"
+                            href="https://drive.google.com/file/d/1TtK6sguucrRtt6nSm_-FTmNxh6_Cs4iY/view"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="flex items-center justify-center gap-2"
